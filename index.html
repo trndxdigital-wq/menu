@@ -380,21 +380,4 @@ function raf(time) {
 }
 
 requestAnimationFrame(raf);
-
-// Add this before your </body> tag
-const lenis = new Lenis();
-
-function raf(time) {
-  lenis.raf(time);
-  requestAnimationFrame(raf);
-}
-
-requestAnimationFrame(raf);
-
-// Force hide that Webflow badge every time the DOM updates
-const observer = new MutationObserver(() => {
-    const badge = document.querySelector('.w-webflow-badge');
-    if (badge) badge.style.display = 'none';
-});
-observer.observe(document.body, { childList: true, subtree: true });
 </script></body></html>
